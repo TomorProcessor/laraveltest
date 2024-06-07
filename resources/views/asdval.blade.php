@@ -5,11 +5,11 @@
 {{--        <p>this is yielded in the extended layout</p>--}}
 {{--    @endsection--}}
 
-    <x-base>
-        <x-slot name="content">
-            <p>this is yielded in the extended layout</p>
-        </x-slot>
-    </x-base>
+{{--    <x-base>--}}
+{{--        <x-slot:content>--}}
+{{--            <p>this is yielded in the extended layout</p>--}}
+{{--        </x-slot:content>--}}
+{{--    </x-base>--}}
 
 
     {{ $testContent = "<p>This is a test paragraph</p>"  }}
