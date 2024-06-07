@@ -10,4 +10,6 @@
         <b>{{ $num }}</b>
         <br/>
     @endforeach
+
+
 </div>
