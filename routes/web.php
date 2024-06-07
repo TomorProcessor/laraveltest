@@ -29,5 +29,5 @@ Route::get('test_asd/{asdval}', function ($asdval) {
     });
 
     //asdval nevű blade, $array változó átadva neki
-    return view('components.asdval', ['array' => [0, 1, 2, 3, 4, 5]]);
+    return view('asdval', ['array' => [0, 1, 2, 3, 4, 5]]);
 })->where('asdval', '[A-z]');

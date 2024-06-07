@@ -5,8 +5,11 @@
 {{--        <p>this is yielded in the extended layout</p>--}}
 {{--    @endsection--}}
 
-    <x-asdval valami="<p>this is yielded in the extended layout</p>">
-    </x-asdval>
+    <x-base>
+        <x-slot name="content">
+            <p>this is yielded in the extended layout</p>
+        </x-slot>
+    </x-base>
 
 
     {{ $testContent = "<p>This is a test paragraph</p>"  }}
