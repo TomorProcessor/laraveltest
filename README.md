@@ -4,7 +4,7 @@ artisan migrate-hez kell:
     -usernek jogosultság mysql-ben: GRANT ALL PRIVILEGES ON laravel.* TO 'laravel'@'localhost'; FLUSH PRIVILEGES; ahol larvel az .env-ben beállított db név
 migrate modellek:
     -artisan make:migration create_modellnev_table -> database/migrations-ben létrejön hozzá a php fájl, ahol a create-ben lehet szerkeszteni a modell tagokat
-    -másik mód: artisan make: model Modellnev -m, ez megcsinálja az alábbiakat is
+    -másik mód: artisan make:model Modellnev -m, ez megcsinálja az alábbiakat is
     -artisan make:model Modellnev -> Models-be bekerül a modell php osztálya
     -fenti modellbe: protected $fillable = ['mezonev'], ahol mezonev mass assigned ([] közzött json szerű syntax), csak a mezonev tölthető ki
     -protected $guarded = ['id'] -> minden fillable, kivéve id
