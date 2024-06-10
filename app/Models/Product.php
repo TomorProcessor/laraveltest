@@ -11,7 +11,8 @@ class Product extends Model
 
     public function owner()
     {
-        return $this->belongsTo(User::class);
+        //alapból user_id lenne a foreign_key, azért adom itt meg, hogy most más
+        return $this->belongsTo(User::class, 'owner_id');
     }
 
     protected $fillable = [

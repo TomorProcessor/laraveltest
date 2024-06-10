@@ -1,3 +1,4 @@
+@php use App\Models\User; @endphp
 <div>
 
     <!-- ha nem component lenne, akkor így kellene -->
@@ -25,4 +26,15 @@
     @endforeach
 
     @extends('components.base')
+
+    @php
+        $id = 5;
+        $user = User::findOrFail($id);
+    @endphp
+
+    <p>User's products who has ID=5</p>
+{{--    {{ $user->products }}--}}
+    @foreach($user->products as $product)
+        Product name: {{ $product->name }} <br/>
+    @endforeach
 </div>

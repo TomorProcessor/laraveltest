@@ -45,6 +45,7 @@ class User extends Authenticatable
 
     public function products()
     {
-        return $this->hasMany(Product::class);
+        //alapból user_id lenne a foreign_key, azért adom itt meg, hogy most más
+        return $this->hasMany(Product::class, 'owner_id');
     }
 }
