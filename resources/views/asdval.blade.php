@@ -5,8 +5,9 @@
 {{--    @section('yieldfromchild')--}}
 {{--        <p>this is yielded in the extended layout</p>--}}
 {{--    @endsection--}}
+    {{ $testVar = 'this is a testVar' }}
 
-    <x-base>
+    <x-base :testPost="$testVar">
         <x-slot name="content">
             <p>this is yielded in the extended layout</p>
         </x-slot>
