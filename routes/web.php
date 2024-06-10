@@ -28,6 +28,10 @@ Route::get('test_asd/{asdval}', function ($asdval) {
         print $uri;
     });
 
+//    \Illuminate\Support\Facades\DB::listen(function ($query) {
+//        logger($query->sql, $query->bindings);
+//    });
+
     //asdval nevű blade, $array változó átadva neki
     return view('asdval', ['array' => [0, 1, 2, 3, 4, 5], 'users' => \App\Models\User::all()]);
 })->where('asdval', '[A-z]');

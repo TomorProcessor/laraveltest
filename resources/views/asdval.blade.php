@@ -30,6 +30,7 @@
     @php
         $id = 5;
         $user = User::findOrFail($id);
+//        ha n + 1 problem lenne, akkor User::width kell
     @endphp
 
     <p>User's products who has ID=5</p>
