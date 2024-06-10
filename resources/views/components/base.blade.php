@@ -4,5 +4,5 @@
 {{--    ha nem component lenne @yield('yieldfromchild')--}}
 
     <!-- mivel komponens, így is lehet, sima blade-nél csak a fenti yield megy, de valamiért nem jó -->
-{{--    {{ $content }}--}}
+    {{ $content }}
 </div>
