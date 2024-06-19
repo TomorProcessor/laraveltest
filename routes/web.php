@@ -42,3 +42,5 @@ Route::post('reg', [\App\Http\Controllers\RegistrationController::class, 'store'
 Route::get('login', [\App\Http\Controllers\SessionController::class, 'create'])->middleware('guest');
 Route::post('login', [\App\Http\Controllers\SessionController::class, 'login'])->middleware('guest');
 Route::get('logout', [\App\Http\Controllers\SessionController::class, 'logout'])->middleware('auth');
+
+Route::post('products', [\App\Http\Controllers\ProductController::class, 'index']);
