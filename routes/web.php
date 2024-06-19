@@ -49,6 +49,6 @@ Route::get('login', [\App\Http\Controllers\SessionController::class, 'create'])-
 Route::post('login', [\App\Http\Controllers\SessionController::class, 'login'])->middleware('guest');
 Route::get('logout', [\App\Http\Controllers\SessionController::class, 'logout'])->middleware('auth');
 
-Route::post('products', [\App\Http\Controllers\ProductController::class, 'index']);
+Route::post('products', [\App\Http\Controllers\ProductController::class, 'index'])->middleware('cors');
 
 Route::post('reg', [\App\Http\Controllers\RegistrationController::class, 'store'])->middleware('cors');
