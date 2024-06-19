@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::options('/{any}', function () {
+    return response('', 200)
+        ->header('Access-Control-Allow-Origin', '*')
+        ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
+        ->header('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, X-Token-Auth, Authorization');
+})->where('any', '.*');
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -34,13 +41,14 @@ Route::get('test_asd/{asdval}', function ($asdval) {
 
     //asdval nevű blade, $array változó átadva neki
     return view('asdval', ['array' => [0, 1, 2, 3, 4, 5], 'users' => \App\Models\User::all()]);
-})->where('asdval', '[A-z]');
+})->where('asdval', '[A-z]')->middleware('cors');
 
 Route::get('reg', [\App\Http\Controllers\RegistrationController::class, 'create'])->middleware('guest');
-Route::post('reg', [\App\Http\Controllers\RegistrationController::class, 'store'])->middleware('guest');
 
 Route::get('login', [\App\Http\Controllers\SessionController::class, 'create'])->middleware('guest');
 Route::post('login', [\App\Http\Controllers\SessionController::class, 'login'])->middleware('guest');
 Route::get('logout', [\App\Http\Controllers\SessionController::class, 'logout'])->middleware('auth');
 
 Route::post('products', [\App\Http\Controllers\ProductController::class, 'index']);
+
+Route::post('reg', [\App\Http\Controllers\RegistrationController::class, 'store'])->middleware('cors');
